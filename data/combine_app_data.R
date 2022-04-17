@@ -1,15 +1,4 @@
 library(tidyverse)
-library(combineR)
-library(janitor)
-library(cfbfastR)
-library(fuzzyjoin)
-library(shiny)
-library(shinyBS)
-library(bs4Dash)
-library(highcharter)
-library(shinycssloaders)
-library(shinyWidgets)
-library(fresh)
 
 
 

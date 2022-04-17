@@ -1,5 +1,5 @@
 library(tidyverse)
-library(titictoc)
+library(tictoc)
 library(cfbfastR)
 library(cfbplotR)
 library(combineR)
