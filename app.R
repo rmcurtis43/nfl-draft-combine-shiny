@@ -93,7 +93,6 @@ ui <- dashboardPage(
       ),
       fluidRow(
         bsModal("player_dash_player_bs", "", "player_dash_player_button", size = "large", 
-
                   HTML('<img src="https://cdn4.iconfinder.com/data/icons/users-68/64/Artboard_17-512.png" style="width:100px;height:100px;display: block; margin-left: auto; margin-right: auto; color: #83F3FF">'), 
                 h4("SELECT PLAYER", style="text-align: center;"),
                 div(withSpinner(uiOutput("player_dash_player_filter"), color = "#000000"), style = "margin: auto; width: 40%;"))
@@ -407,7 +406,7 @@ server <- function(input, output, session) {
              div(player_dash_data_reactive()$position[1], style="font-size: 26px; font-color: black;text-shadow: 0 0 4px #959595;") 
               
               ),  
-          div(style = "width: 100%; overflow: hidden; margin-top: -40px;",
+          div(style = "width: 100%;  margin-top: -40px;",
       div(style = "float: left; width: 250px; height: 200px; margin-top: 40px;",
         bs4InfoBox(
           title = "Total Size Score",
@@ -427,7 +426,7 @@ server <- function(input, output, session) {
           width = 12,
           color = ifelse(player_dash_data_reactive()$tsa_percentile_position >= 75, "success", ifelse(player_dash_data_reactive()$tsa_percentile_position >50, "gray", ifelse(player_dash_data_reactive()$tsa_percentile_position <= 25, "danger", "warning"))),
         )),
-      div(style = "display: block; margin-left: 300px; width: 300px; heigh: 400px; margin-top: -10px;",
+      div(style = "display: block; margin-left: 225px; width: 350px; height: 400px; margin-top: -10px;",
           withSpinner(gt_output("player_dash_gt_tbl"), color = "#000000")
         )
           )
@@ -1146,11 +1145,14 @@ server <- function(input, output, session) {
       opt_table_lines(extent = c("none")) %>%
       tab_style(
         style = list(
-          cell_text(weight = "bold")
+          cell_text(weight = "bold", size = "8")
         ),
         locations = cells_body(
           columns = Test
         )
+      ) %>%
+      tab_options(
+        table.font.size = px(12)
       )
   })
   
