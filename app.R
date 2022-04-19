@@ -46,12 +46,17 @@ ui <- dashboardPage(
                   controlbarIcon = icon("book-reader")
                   ),
   dashboardSidebar(
+    tags$style(HTML("
+      .main-sidebar{
+        width: 250px;
+      }
+    ")),
+    #width = 400,
     inputId = "sidebar",
     disable = FALSE,
     skin = 'light',
     status = 'danger',
     sidebarMenu(
-
       menuItem(
         text = "Player Performance",
         tabName = "player_dash_tab",
@@ -406,8 +411,8 @@ server <- function(input, output, session) {
              div(player_dash_data_reactive()$position[1], style="font-size: 26px; font-color: black;text-shadow: 0 0 4px #959595;") 
               
               ),  
-          div(style = "width: 100%;  margin-top: -40px;",
-      div(style = "float: left; width: 250px; height: 200px; margin-top: 40px;",
+          div(style = "display: block; margin: auto; width: 100%;  margin-top: -40px;",
+      div(style = "display: block;  float: left; width: 250px; height: 200px; margin-top: 40px;",
         bs4InfoBox(
           title = "Total Size Score",
           value = paste0(round(player_dash_data_reactive()$tss_percentile_position, 0), "/100"),
@@ -426,7 +431,7 @@ server <- function(input, output, session) {
           width = 12,
           color = ifelse(player_dash_data_reactive()$tsa_percentile_position >= 75, "success", ifelse(player_dash_data_reactive()$tsa_percentile_position >50, "gray", ifelse(player_dash_data_reactive()$tsa_percentile_position <= 25, "danger", "warning"))),
         )),
-      div(style = "display: block; margin-left: 225px; width: 350px; height: 400px; margin-top: -10px;",
+      div(style = "display: block;  height: 400px; margin-top: -10px;",
           withSpinner(gt_output("player_dash_gt_tbl"), color = "#000000")
         )
           )
@@ -1152,7 +1157,8 @@ server <- function(input, output, session) {
         )
       ) %>%
       tab_options(
-        table.font.size = px(12)
+        table.font.size = px(12),
+        table.width = "250px"
       )
   })
   
