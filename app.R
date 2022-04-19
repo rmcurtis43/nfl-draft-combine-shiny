@@ -554,7 +554,7 @@ server <- function(input, output, session) {
       hc_add_series(
         name = paste0("Low Designation Percentile - High Position Percentile"),
         type = 'polygon',
-        color = hex_to_rgba("#FDD844", 0.1),
+        color = hex_to_rgba("#FDD844", 0.4),
         enableMouseTracking = TRUE,
         visible = TRUE,
         showInLegend = FALSE,
@@ -565,7 +565,7 @@ server <- function(input, output, session) {
       hc_add_series(
         name = paste0("High Designation Percentile - Low Position Percentile"),
         type = 'polygon',
-        color = hex_to_rgba("#FDD844", 0.1),
+        color = hex_to_rgba("#FDD844", 0.4),
         enableMouseTracking = TRUE,
         visible = TRUE,
         showInLegend = FALSE,
@@ -576,7 +576,7 @@ server <- function(input, output, session) {
       hc_add_series(
         name = paste0("Low"),
         type = 'polygon',
-        color = hex_to_rgba("#D00000", 0.1),
+        color = hex_to_rgba("#D00000", 0.4),
         enableMouseTracking = TRUE,
         visible = TRUE,
         showInLegend = FALSE,
@@ -587,7 +587,7 @@ server <- function(input, output, session) {
       hc_add_series(
         name = paste0("Moderate"),
         type = 'polygon',
-        color = hex_to_rgba("#E4E1D6", 0.2),
+        color = hex_to_rgba("#E4E1D6", 0.5),
         enableMouseTracking = FALSE,
         visible = TRUE,
         showInLegend = FALSE,
@@ -598,7 +598,7 @@ server <- function(input, output, session) {
       hc_add_series(
         name = paste0("Moderate"),
         type = 'polygon',
-        color = hex_to_rgba("#E4E1D6", 0.2),
+        color = hex_to_rgba("#E4E1D6", 0.5),
         enableMouseTracking = FALSE,
         visible = TRUE,
         showInLegend = FALSE,
@@ -609,7 +609,7 @@ server <- function(input, output, session) {
       hc_add_series(
         name = paste0("High"),
         type = 'polygon',
-        color =  hex_to_rgba("green", 0.1),
+        color =  hex_to_rgba("green", 0.4),
         enableMouseTracking = TRUE,
         visible = TRUE,
         showInLegend = FALSE,
